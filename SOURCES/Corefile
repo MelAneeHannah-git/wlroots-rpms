@@ -1,0 +1,17 @@
+oceanic.cloud {
+    file /etc/coredns/zones/oceanic.cloud {
+        reload 30s
+    }
+    log {
+        class all
+    }
+    errors
+    cache 300
+}
+
+. {
+    forward . 1.1.1.1 1.0.0.1
+    cache 300
+    log
+    errors
+}

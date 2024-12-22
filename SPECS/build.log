@@ -1,0 +1,114 @@
+setting SOURCE_DATE_EPOCH=1710633600
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.uaJdFU
++ umask 022
++ cd /home/rpmbuild/rpmbuild/BUILD
++ cd /home/rpmbuild/rpmbuild/BUILD
++ rm -rf coredns-1.12.0
++ /usr/bin/gzip -dc /home/rpmbuild/rpmbuild/SOURCES/v1.12.0.tar.gz
++ /usr/bin/tar -xof -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd coredns-1.12.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ cat
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.K2AAxV
++ umask 022
++ cd /home/rpmbuild/rpmbuild/BUILD
++ cd coredns-1.12.0
++ export CGO_ENABLED=1
++ CGO_ENABLED=1
++ export 'GOFLAGS=-buildmode=pie -trimpath'
++ GOFLAGS='-buildmode=pie -trimpath'
++ export 'LDFLAGS=-linkmode=external -compressdwarf=false'
++ LDFLAGS='-linkmode=external -compressdwarf=false'
++ go build '-ldflags=-linkmode=external -compressdwarf=false' -o coredns
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.tQeFRh
++ umask 022
++ cd /home/rpmbuild/rpmbuild/BUILD
++ '[' /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64 '!=' / ']'
++ rm -rf /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64
+++ dirname /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64
++ mkdir -p /home/rpmbuild/rpmbuild/BUILDROOT
++ mkdir /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64
++ cd coredns-1.12.0
++ install -D -m 755 coredns /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/sbin/coredns
++ install -d /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/etc/coredns/zones
++ install -d /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/var/log/coredns
++ install -D -m 644 /home/rpmbuild/rpmbuild/SOURCES/Corefile /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/etc/coredns/Corefile
++ install -D -m 644 /home/rpmbuild/rpmbuild/SOURCES/coredns.service /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/lib/systemd/system/coredns.service
++ /usr/bin/find-debuginfo -j4 --strict-build-id -m -i --build-id-seed 1.12.0-1.el9 --unique-debug-suffix -1.12.0-1.el9.x86_64 --unique-debug-src-base coredns-1.12.0-1.el9.x86_64 --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 --remove-section .gnu.build.attributes -S debugsourcefiles.list /home/rpmbuild/rpmbuild/BUILD/coredns-1.12.0
+extracting debug info from /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/sbin/coredns
+warning: Unsupported auto-load script at offset 0 in section .debug_gdb_scripts
+of file /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/sbin/coredns.
+Use `info auto-load python-scripts [REGEXP]' to list them.
+original debug info size: 4kB, size after compression: 5kB
+/usr/bin/sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
++ '[' '%{buildarch}' = noarch ']'
++ QA_CHECK_RPATHS=1
++ case "${QA_CHECK_RPATHS:-}" in
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0
++ /usr/lib/rpm/brp-python-hardlink
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
+Processing files: coredns-1.12.0-1.el9.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.pRbdlq
++ umask 022
++ cd /home/rpmbuild/rpmbuild/BUILD
++ cd coredns-1.12.0
++ DOCDIR=/home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/share/doc/coredns
++ export LC_ALL=C
++ LC_ALL=C
++ export DOCDIR
++ /usr/bin/mkdir -p /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/share/doc/coredns
++ cp -pr README.md /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/share/doc/coredns
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.sz166g
++ umask 022
++ cd /home/rpmbuild/rpmbuild/BUILD
++ cd coredns-1.12.0
++ LICENSEDIR=/home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/share/licenses/coredns
++ export LC_ALL=C
++ LC_ALL=C
++ export LICENSEDIR
++ /usr/bin/mkdir -p /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/share/licenses/coredns
++ cp -pr LICENSE /home/rpmbuild/rpmbuild/BUILDROOT/coredns-1.12.0-1.el9.x86_64/usr/share/licenses/coredns
++ RPM_EC=0
+++ jobs -p
++ exit 0
+warning: File listed twice: /etc/coredns
+warning: File listed twice: /etc/coredns/Corefile
+warning: File listed twice: /etc/coredns/zones
+warning: File listed twice: /etc/coredns/zones
+warning: File listed twice: /var/log/coredns
+Provides: config(coredns) = 1.12.0-1.el9 coredns = 1.12.0-1.el9 coredns(x86-64) = 1.12.0-1.el9
+Requires(interp): /bin/sh /bin/sh /bin/sh /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(pre): /bin/sh shadow-utils
+Requires(post): /bin/sh systemd
+Requires(preun): /bin/sh systemd
+Requires(postun): /bin/sh systemd
+Requires: libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3.2)(64bit) libc.so.6(GLIBC_2.32)(64bit) libc.so.6(GLIBC_2.34)(64bit) libresolv.so.2()(64bit) rtld(GNU_HASH)
+Processing files: coredns-debugsource-1.12.0-1.el9.x86_64
+error: Empty %files file /home/rpmbuild/rpmbuild/BUILD/coredns-1.12.0/debugsourcefiles.list
+
+
+RPM build errors:
+    File listed twice: /etc/coredns
+    File listed twice: /etc/coredns/Corefile
+    File listed twice: /etc/coredns/zones
+    File listed twice: /etc/coredns/zones
+    File listed twice: /var/log/coredns
+    Empty %files file /home/rpmbuild/rpmbuild/BUILD/coredns-1.12.0/debugsourcefiles.list

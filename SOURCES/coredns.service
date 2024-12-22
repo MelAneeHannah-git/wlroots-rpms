@@ -1,0 +1,25 @@
+[Unit]
+Description=CoreDNS DNS server
+Documentation=https://coredns.io
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=coredns
+Group=coredns
+ExecStart=/usr/sbin/coredns -conf /etc/coredns/Corefile
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=1048576
+LimitNPROC=512
+
+# Security hardening
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
